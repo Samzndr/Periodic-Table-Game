@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periodic Table Element Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Falling elements background -->
+    <div class="falling-elements-background" id="falling-elements-background">
+        <!-- Falling elements will be added here -->
+    </div>
+
+    <!-- Welcome Screen Modal -->
+    <div id="welcome-modal" class="modal">
+        <div class="modal-content welcome-content">
+            <h1>🧪 Element Symbol Game</h1>
+            <p>Test your knowledge of the periodic table!</p>
+            
+            <div class="welcome-buttons">
+                <button id="start-game-btn" class="primary-btn">🎮 Start Game</button>
+                <button id="instructions-btn" class="secondary-btn">📖 How to Play</button>
+            </div>
+            
+            <div id="instructions" class="instructions hidden">
+                <h4>How to Play:</h4>
+                <ul>
+                    <li>🔬 Identify elements by their chemical symbols</li>
+                    <li>🌍 Answer in English or French</li>
+                    <li>💡 Use hints if you're stuck</li>
+                    <li>⏭️ Skip questions you don't know</li>
+                    <li>🎯 Collect all 29 elements to complete the game!</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final Score Modal -->
+    <div id="score-modal" class="modal hidden">
+        <div class="modal-content score-content">
+            <h2>🎉 Game Complete!</h2>
+            
+            <div class="gauge-container">
+                <div class="gauge" id="score-gauge">
+                    <div class="gauge-fill" id="gauge-fill"></div>
+                    <div class="gauge-center">
+                        <div class="gauge-percentage" id="gauge-percentage">0%</div>
+                        <div class="gauge-label">Score</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="score-details" id="score-details">
+                <!-- Score details will be populated here -->
+            </div>
+            
+            <div class="wrong-answers-section" id="wrong-answers-section">
+                <!-- Wrong answers will be populated here -->
+            </div>
+            
+            <div class="modal-buttons">
+                <button id="play-again-btn" class="primary-btn">🔄 Play Again</button>
+                <button id="exit-game-btn" class="secondary-btn">🚪 Exit</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-container">
+        <!-- Left side - Game area -->
+        <div class="game-side">
+            <header>
+                <h1>🧪 Element Symbol Game</h1>
+                <p>Can you identify the element from its symbol?</p>
+            </header>
+
+            <div class="game-area">
+                <!-- Score and stats -->
+                <div class="stats">
+                    <div class="score">Score: <span id="score">0</span></div>
+                    <div class="streak">Streak: <span id="streak">0</span></div>
+                    <div class="collected">Collected: <span id="collected-count">0</span>/<span id="total-elements">29</span></div>
+                </div>
+
+                <!-- Main game content -->
+                <div class="question-area">
+                    <div class="element-symbol" id="element-symbol">H</div>
+                    <p class="question-text">What element has this symbol?</p>
+                    
+                    <input type="text" id="answer-input" placeholder="Enter element name..." autocomplete="off">
+                    <div class="button-group">
+                        <button id="submit-btn">Submit Answer</button>
+                        <button id="skip-btn" class="skip-button">Skip</button>
+                    </div>
+                </div>
+
+                <!-- Feedback area -->
+                <div class="feedback" id="feedback"></div>
+
+                <!-- Next question button (hidden initially) -->
+                <button id="next-btn" class="hidden">Next Question</button>
+            </div>
+
+            <!-- Game controls -->
+            <div class="controls">
+                <button id="new-game-btn">New Game</button>
+                <button id="hint-btn">Hint</button>
+            </div>
+        </div>
+
+        <!-- Right side - Periodic table -->
+        <div class="periodic-side">
+            <div class="collected-elements">
+                <h3>Your Periodic Table Progress</h3>
+                <div class="periodic-grid" id="periodic-grid">
+                    <!-- Elements will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load our JavaScript files -->
+    <script src="elements.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
